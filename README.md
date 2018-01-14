@@ -67,7 +67,9 @@ $ whoami
 $ id -u username
 ```
 * How to list all files, including hidden ones, in a directory?
+> $ ls -l
 * What is the Unix/Linux command to remove a directory and its contents?
+> $ rm -rf /dir
 * Which command will show you free/used memory? Does free memory exist on Linux?
 * How to search for the string "my konfi is the best" in files of a directory recursively?
 * How to connect to a remote server or what is SSH?
