@@ -62,6 +62,10 @@ A collection of linux sysadmin/devops interview questions. Feel free to contribu
 #### [[⬆]](#toc) <a name='simple'>Simple Linux Questions:</a>
 
 * What is the name and the UID of the administrator user?
+```
+$ whoami
+$ id -u username
+```
 * How to list all files, including hidden ones, in a directory?
 * What is the Unix/Linux command to remove a directory and its contents?
 * Which command will show you free/used memory? Does free memory exist on Linux?
