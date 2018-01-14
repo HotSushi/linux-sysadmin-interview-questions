@@ -44,13 +44,17 @@ A collection of linux sysadmin/devops interview questions. Feel free to contribu
 * Why we must choose you?
 * What function does DNS play on a network?
 > https://www.thegeekstuff.com/2013/12/dns-basics/
+> https://opensource.com/article/17/4/introduction-domain-name-system-dns
 * What is HTTP?
 > https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview
 * What is an HTTP proxy and how does it work?
 * Describe briefly how HTTPS works.
 > https://robertheaton.com/2014/03/27/how-does-https-actually-work/
+> https://ssl.trustwave.com/support/support-how-ssl-works.php
 * What is SMTP? Give the basic scenario of how a mail message is delivered via SMTP.
 * What is RAID? What is RAID0, RAID1, RAID5, RAID10?
+> https://superuser.com/questions/287680/how-does-parity-work-on-a-raid-5-array
+> https://www.thegeekstuff.com/2010/08/raid-levels-tutorial
 * What is a level 0 backup? What is an incremental backup?
 * Describe the general file system hierarchy of a Linux system.
 
