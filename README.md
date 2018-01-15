@@ -72,6 +72,8 @@ $ id -u username
 > $ rm -rf /dir
 * Which command will show you free/used memory? Does free memory exist on Linux?
 * How to search for the string "my konfi is the best" in files of a directory recursively?
+> https://www.ibm.com/developerworks/community/blogs/58e72888-6340-46ac-b488-d31aa4058e9c/entry/search_patterns_in_files_using_linux_grep_command6?lang=en
+> $ grep -i[ignore case] -r[recursivelydir] "String\*WithWild" /dir/loc
 * How to connect to a remote server or what is SSH?
 * How to get all environment variables and how can you use them?
 * I get "command not found" when I run ```ifconfig -a```. What can be wrong?
