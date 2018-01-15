@@ -110,6 +110,8 @@ $ id -u username
 > $ command > out 2>error  // stdout default is program > output , 2 gives error output <br>
 > $ command &> out    // >> is append > is start afresh
 * What is the difference between UNIX and Linux.
+> https://superuser.com/questions/43149/what-is-the-difference-between-unix-and-linux <br>
+> different from scratch, proprietary, POSIX compliant
 * What is the difference between Telnet and SSH?
 * Explain the three load averages and what do they indicate. What command can be used to view the load averages?
 * Can you name a lower-case letter that is not a valid option for GNU ```ls```?
