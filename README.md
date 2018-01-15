@@ -72,10 +72,18 @@ $ id -u username
 > $ rm -rf /dir
 * Which command will show you free/used memory? Does free memory exist on Linux?
 * How to search for the string "my konfi is the best" in files of a directory recursively?
-> https://www.ibm.com/developerworks/community/blogs/58e72888-6340-46ac-b488-d31aa4058e9c/entry/search_patterns_in_files_using_linux_grep_command6?lang=en
+> https://www.ibm.com/developerworks/community/blogs/58e72888-6340-46ac-b488-d31aa4058e9c/entry/search_patterns_in_files_using_linux_grep_command6?lang=en <br>
 > $ grep -i[ignore case] -r[recursivelydir] "String\*WithWild" /dir/loc
 * How to connect to a remote server or what is SSH?
+> https://www.hostinger.com/tutorials/ssh-tutorial-how-does-ssh-work <br>
+> https://www.digitalocean.com/community/tutorials/understanding-the-ssh-encryption-and-connection-process <br>
+> steps 1) TCP 2) Secure Channel 3) User Authorization
 * How to get all environment variables and how can you use them?
+> Environmental variables are variables that are defined for the current shell and are inherited by any child shells or processes. Environmental variables are used to pass information into processes that are spawned from the shell.
+> https://www.digitalocean.com/community/tutorials/how-to-read-and-set-environmental-and-shell-variables-on-a-linux-vps <br>
+> $ printenv [environment name optional/ all] <br>
+> $ env EDITOR=vim xterm <br>
+> $ export PATH=$PATH:/home/my_user/bin
 * I get "command not found" when I run ```ifconfig -a```. What can be wrong?
 * What happens if I type TAB-TAB?
 * What command will show the available disk space on the Unix/Linux system?
