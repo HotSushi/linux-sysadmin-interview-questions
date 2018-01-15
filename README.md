@@ -85,8 +85,11 @@ $ id -u username
 > $ env EDITOR=vim xterm <br>
 > $ export PATH=$PATH:/home/my_user/bin
 * I get "command not found" when I run ```ifconfig -a```. What can be wrong?
+> PATH environment may not be containing ifconfig program binary
 * What happens if I type TAB-TAB?
+> lists possible completions, often directory listings and binary completions
 * What command will show the available disk space on the Unix/Linux system?
+> $ df -h[human readable in MBs] 
 * What commands do you know that can be used to check DNS records?
 * What Unix/Linux commands will alter a files ownership, files permissions?
 * What does ```chmod +x FILENAME```do?
@@ -97,8 +100,15 @@ $ id -u username
 * What is a bash alias?
 * How do you set the mail address of the root/a user?
 * What does CTRL-c do?
+> sends SIGINT interrupt to the program <br>
+> https://stackoverflow.com/questions/4042201/how-does-sigint-relate-to-the-other-termination-signals
 * What is in /etc/services?
+> https://www.lifewire.com/what-is-etc-services-2196940 <br>
+> some port no are reserved, this file shows \< service, port no, TCP/UDP \> <br>
+>  programs can do a getportbyname() sockets call in their code in order to understand what port they should use
 * How to redirect STDOUT and STDERR in bash? (> /dev/null 2>&1)
+> $ command > out 2>error  // stdout default is program > output , 2 gives error output <br>
+> $ command &> out    // >> is append > is start afresh
 * What is the difference between UNIX and Linux.
 * What is the difference between Telnet and SSH?
 * Explain the three load averages and what do they indicate. What command can be used to view the load averages?
