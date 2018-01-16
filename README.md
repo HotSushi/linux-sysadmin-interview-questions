@@ -128,8 +128,11 @@ $ id -u username
 > $ usermod -a[append for secondary groups] -G[secondary groups] groupname1,groupname2 username <br>
 > a user can belong to a single primary group, for secondary groups use -a
 > $ groups # list groups current user belongs to 
+> $ gpasswd -d user group
 * What is a bash alias?
-* How do you set the mail address of the root/a user?
+> A Bash alias is essentially nothing more than a keyboard shortcut
+> $ alias rm="rm -i"
+> $ unalias rm
 * What does CTRL-c do?
 > sends SIGINT interrupt to the program <br>
 > https://stackoverflow.com/questions/4042201/how-does-sigint-relate-to-the-other-termination-signals
@@ -145,7 +148,8 @@ $ id -u username
 > different from scratch, proprietary, POSIX compliant
 * What is the difference between Telnet and SSH?
 * Explain the three load averages and what do they indicate. What command can be used to view the load averages?
-* Can you name a lower-case letter that is not a valid option for GNU ```ls```?
+> $ uptime <br>
+> https://www.howtogeek.com/194642/understanding-the-load-average-on-linux-and-other-unix-like-systems/
 * What is a Linux kernel module?
 * Walk me through the steps in booting into single user mode to troubleshoot a problem.
 * Walk me through the steps you'd take to troubleshoot a 404 error on a web application you administer.
