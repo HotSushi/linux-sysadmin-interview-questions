@@ -97,8 +97,22 @@ $ id -u username
 > $ chgrp groupname filename.txt <br>
 > $ chown username:groupname filename.txt  #change both
 * What does ```chmod +x FILENAME```do?
+> file has 3X3 permissions, Read, write, executable permissions for user, group, others <br>
+> chmod 644 filename (give read, write (4+2 = 6) to user and read (4) to group and others.) <br>
+> chmod u+r,g+x filename <br>
+> chmod o-rw filename <br>
+> chmod +x filename (all groups get +x)
+* How does umask work?
+> The mask is applied whenever a file is created. If the mask has a bit set to "1", that means the corresponding file permission will always be disabled when files are subsequently created. A bit set to "0" in the mask means that the corresponding permission will be determined by the requesting process <br>
+> umask is always applied after any chmod/ file creation. default: 002, no file will ever have write acces for others.
+> https://www.computerhope.com/unix/uumask.htm
 * What does the permission 0750 on a file mean?
+> 0-111-101-000 = --rwx-r-x---- -> user can r,w,x, group can r,x, others cant do anything 
 * What does the permission 0750 on a directory mean?
+> initial 0 has no effect in both file and directory. same as above.<br>
+> read => ls
+> write => touch
+> executable => cd
 * How to add a new system user without login permissions?
 * How to add/remove a group from a user?
 * What is a bash alias?
