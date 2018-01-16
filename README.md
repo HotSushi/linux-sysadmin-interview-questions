@@ -113,8 +113,21 @@ $ id -u username
 > read => ls
 > write => touch
 > executable => cd
+* How to create and delete Users and make them sudo?
+> $ adduser usr (both need sudo permission) <br>
+> $ deluser usr <br>
+> add the user to the file /etc/sudoers
 * How to add a new system user without login permissions?
+> $ adduser [-m for home dir] usr <br>
+> $ usermod -L usr <br>
+> to List all users see /etc/passwd
 * How to add/remove a group from a user?
+> https://www.howtogeek.com/50787/add-a-user-to-a-group-or-second-group-on-linux/ <br>
+> $ groupadd GG <br>
+> $ usermod -g primarygroupname usr <br>
+> $ usermod -a[append for secondary groups] -G[secondary groups] groupname1,groupname2 username <br>
+> a user can belong to a single primary group, for secondary groups use -a
+> $ groups # list groups current user belongs to 
 * What is a bash alias?
 * How do you set the mail address of the root/a user?
 * What does CTRL-c do?
