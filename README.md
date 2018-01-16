@@ -92,6 +92,10 @@ $ id -u username
 > $ df -h[human readable in MBs] 
 * What commands do you know that can be used to check DNS records?
 * What Unix/Linux commands will alter a files ownership, files permissions?
+> $ chown username filename.txt  #for a single file owner will be username <br>
+> $ chown -R username dir/  <br>
+> $ chgrp groupname filename.txt <br>
+> $ chown username:groupname filename.txt  #change both
 * What does ```chmod +x FILENAME```do?
 * What does the permission 0750 on a file mean?
 * What does the permission 0750 on a directory mean?
