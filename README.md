@@ -158,9 +158,13 @@ $ id -u username
 
 * What do the following commands do and how would you use them?
  * ```tee```
+> input from standard input and output to standard output and to file
  * ```awk```
+> https://www.digitalocean.com/community/tutorials/how-to-use-the-awk-language-to-manipulate-text-in-linux
  * ```tr```
+> https://www.thegeekstuff.com/2012/12/linux-tr-command
  * ```cut```
+> https://www.thegeekstuff.com/2013/06/cut-command-examples/
  * ```tac```
  * ```curl```
  * ```wget```
