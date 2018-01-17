@@ -190,8 +190,14 @@ $ id -u username
 * Are there any other RRs and what are they used for?
 * What is a Split-Horizon DNS?
 * What is the sticky bit?
+> $ chmod +t /opt/dump/ <br>
+> $ chmod 1757 /opt/dump/ <br>
+> Sticky Bit is mainly used on folders in order to avoid deletion of a folder and it’s content by other users though they having write permissions on the folder contents.If Sticky bit is enabled on a folder, the folder contents are deleted by only owner who created them and the root user.<br>
+> $ ls -l => -rwxr-xrwt  t-> others have executable permission, if T -> others dont have exe permission
 * What does the immutable bit do to a file?
+> Prevents a file from accidental changes, like automatic software update changing configuration. cant be modified, deleted, removed, no linking allowed
 * What is the difference between hardlinks and symlinks? What happens when you remove the source to a symlink/hardlink?
+> https://stackoverflow.com/questions/185899/what-is-the-difference-between-a-symbolic-link-and-a-hard-link
 * What is an inode and what fields are stored in an inode?
 * How to force/trigger a file system check on next reboot?
 * What is SNMP and what is it used for?
