@@ -172,7 +172,17 @@ $ id -u username
  * ```head```
  * ```tail```
 * What does an ```&``` after a command do?
+> If a command is terminated by the control operator &, the shell executes the command in the background in a subshell. The shell does not wait for the command to finish, and the return status is 0. 
 * What does ```& disown``` after a command do?
+> src: https://www.digitalocean.com/community/tutorials/how-to-use-bash-s-job-control-to-manage-foreground-and-background-processes <br>
+> $ jobs # displays background processes either running or stopped <br>
+> $ bg %i # starts ith background process <br>
+> $ fg %i # brings ith background process to front <br>
+> $ ping google.com &  # starts process in bg <br>
+> $ ping google.com  # running CTR+Z stops process in background <br>
+> $ kill -STOP %i # suspends background processs <br>
+> $ disown %i # removes process i from job list and will continue working even if terminal closed (ignores SIGHUP) <br>
+> $ nohup ping google.com & # same as above
 * What is a packet filter and how does it work?
 * What is Virtual Memory?
 * What is swap and what is it used for?
