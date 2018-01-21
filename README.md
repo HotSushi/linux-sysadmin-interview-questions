@@ -185,6 +185,7 @@ $ id -u username
 > $ nohup ping google.com & # same as above
 * What is a packet filter and how does it work?
 * What is Virtual Memory?
+> BLOG
 * What is swap and what is it used for?
 * What is an A record, an NS record, a PTR record, a CNAME record, an MX record?
 * Are there any other RRs and what are they used for?
@@ -201,8 +202,10 @@ $ id -u username
 * What is an inode and what fields are stored in an inode?
 * How to force/trigger a file system check on next reboot?
 * What is SNMP and what is it used for?
+BLOG
 * What is a runlevel and how to get the current runlevel?
 * What is SSH port forwarding?
+BLOG
 * What is the difference between local and remote port forwarding?
 * What are the steps to add a user to a system without using useradd/adduser?
 * What is MAJOR and MINOR numbers of special files?
