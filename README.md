@@ -202,11 +202,12 @@ $ id -u username
 * What is an inode and what fields are stored in an inode?
 * How to force/trigger a file system check on next reboot?
 * What is SNMP and what is it used for?
-BLOG
+> BLOG
 * What is a runlevel and how to get the current runlevel?
 * What is SSH port forwarding?
-BLOG
+> BLOG
 * What is the difference between local and remote port forwarding?
+> BLOG and Stack overflow
 * What are the steps to add a user to a system without using useradd/adduser?
 * What is MAJOR and MINOR numbers of special files?
 * Describe the mknod command and when you'd use it.
