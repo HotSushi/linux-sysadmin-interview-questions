@@ -147,6 +147,9 @@ $ id -u username
 > https://superuser.com/questions/43149/what-is-the-difference-between-unix-and-linux <br>
 > different from scratch, proprietary, POSIX compliant
 * What is the difference between Telnet and SSH?
+> I use telnet (port 23) to check if port is open, you can form HTTP get requests too.Telnet has no encryption.<br>
+> $ telnet localhost 80
+> Historically it used to allow shell access, now it doesnt
 * Explain the three load averages and what do they indicate. What command can be used to view the load averages?
 > $ uptime <br>
 > https://www.howtogeek.com/194642/understanding-the-load-average-on-linux-and-other-unix-like-systems/
@@ -184,8 +187,8 @@ $ id -u username
 > $ disown %i # removes process i from job list and will continue working even if terminal closed (ignores SIGHUP) <br>
 > $ nohup ping google.com & # same as above
 * What is a packet filter and how does it work?
-https://www.netfilter.org/documentation/HOWTO/packet-filtering-HOWTO-3.html
-A packet filter is a piece of software which looks at the header of packets as they pass through, and decides the fate of the entire packet. It might decide to DROP/ACCEPT the packet. https://www.netfilter.org/documentation/HOWTO/packet-filtering-HOWTO-6.html. Has 3 in-built chains(Firewalls), INPUT, OUTPUT (for packets destined for this box), FORWARD (for other box). Possible to create our own chain. And link it to existing chains. Possible to modify each chain. Each chain entry is a rule which has action ACCEPT/ DROP.<br>
+> https://www.netfilter.org/documentation/HOWTO/packet-filtering-HOWTO-3.html <br>
+>A packet filter is a piece of software which looks at the header of packets as they pass through, and decides the fate of the entire packet. It might decide to DROP/ACCEPT the packet. https://www.netfilter.org/documentation/HOWTO/packet-filtering-HOWTO-6.html. Has 3 in-built chains(Firewalls), INPUT, OUTPUT (for packets destined for this box), FORWARD (for other box). Possible to create our own chain. And link it to existing chains. Possible to modify each chain. Each chain entry is a rule which has action ACCEPT/ DROP.<br>
 > $ iptables -L # List all rules
 > $ iptables -I INPUT -s 10.10.10.10 -j DROP # blocks ip
 * What is Virtual Memory?
@@ -263,7 +266,10 @@ A packet filter is a piece of software which looks at the header of packets as t
 > It tells the new process to ignore SIGHUP. It is the signal sent by the kernel when the parent shell is closed.
 * What is the difference between these two commands?
  * ```myvar=hello```
+ > creates a shell variable, can be printed with $myvar,  to pass environment variables to a process<br>
+ > $ env GREP_OPTIONS='-v' grep one test.txt
  * ```export myvar=hello```
+ > creates environment variable
 * You need to upgrade kernel at 100-1000 servers, how you would do this?
 * How can you limit process memory usage?
 > $ ulimit -d 10000 -m 10000 -v 10000 #-d data segment size -m max memory size-v virtual memory size
