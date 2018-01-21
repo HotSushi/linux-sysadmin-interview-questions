@@ -195,6 +195,9 @@ A packet filter is a piece of software which looks at the header of packets as t
 * What is an A record, an NS record, a PTR record, a CNAME record, an MX record?
 * Are there any other RRs and what are they used for?
 * What is a Split-Horizon DNS?
+>Split-Brain DNS, Split-Horizon DNS, or Split DNS are terms used to describe when two zones for the same domain are created, one to be used by the internal network, the other used by the external network (usually the Internet). A Split DNS infrastructure is used to direct internal hosts to an internal domain name server for name resolution and external hosts to an external domain name server for name resolution. https://www.youtube.com/watch?v=yPH02ZcfFtc <br>
+> Some internal resources can be made private by only listing them in intranet dns server <br>
+> example staging.housing.com
 * What is the sticky bit?
 > $ chmod +t /opt/dump/ <br>
 > $ chmod 1757 /opt/dump/ <br>
@@ -220,7 +223,9 @@ A packet filter is a piece of software which looks at the header of packets as t
 * Describe a scenario when deleting a file, but 'df' not showing the space being freed.
 > inode data is not cleared yet, because its being used by some process
 * Describe how 'ps' works.
+> Reads contents of /proc/\*
 * What happens to a child process that dies and has no parent process to wait for it and what’s bad about this?
+> Linux takes care. init waits for its children.
 * Explain briefly each one of the process states.
 * How to know which process listens on a specific port?
 > $ sudo netstat -nlp | grep :80 # n-> show names of hosts, ports l-> listening, p-> show pid <br>
@@ -249,7 +254,9 @@ A packet filter is a piece of software which looks at the header of packets as t
 >p : named pipe
 >l : symbolic link 
 > https://linuxconfig.org/identifying-file-types-in-linux
-* What is the difference between a process and a thread? And parent and child processes after a fork system call?
+* What is the difference between a process and a thread? 
+* And parent and child processes after a fork system call?
+> Different return value, pids, program counter, data is copied 
 * What is the difference between exec and fork?
 > fork creates a duplicate child process and start executing where it left off. return value is 0 for child, pid for parent. The exec call is a way to basically replace the entire current process with a new program. There is pattern fork, exec, wait which bash uses (see diagram here https://stackoverflow.com/questions/1653340/differences-between-fork-and-exec). Note Forking creates zombies.
 * What is "nohup" used for?
@@ -257,21 +264,22 @@ A packet filter is a piece of software which looks at the header of packets as t
 * What is the difference between these two commands?
  * ```myvar=hello```
  * ```export myvar=hello```
-* How many NTP servers would you configure in your local ntp.conf?
-* What does the column 'reach' mean in ```ntpq -p``` output?
 * You need to upgrade kernel at 100-1000 servers, how you would do this?
-* How can you get Host, Channel, ID, LUN of SCSI disk?
 * How can you limit process memory usage?
-* What is bash quick substitution/caret replace(^x^y)?
+> $ ulimit -d 10000 -m 10000 -v 10000 #-d data segment size -m max memory size-v virtual memory size
 * Do you know of any alternative shells? If so, have you used any?
+> I've used zsh, but i did it just for the themes. It allows me to select suggestions for ls.
 * What is a tarpipe (or, how would you go about copying everything, including hardlinks and special files, from one server to another)?
 * How can you tell if the httpd package was already installed?
-* How can you list the contents of a package?
+> $ dpkg -l | grep httpd
 * How can you determine which package is better: openssh-server-5.3p1-118.1.el6_8.x86_64 or openssh-server-6.6p1-1.el6.x86_64 ?
+> <foo>_<VersionNumber>-<DebianRevisionNumber>_<DebianArchitecture>.deb
 * Can you explain to me the difference between block based, and object based storage?
 
 #### [[⬆]](#toc) <a name='hard'>Hard Linux Questions:</a>
-
+* What is bash quick substitution/caret replace(^x^y)?
+* How many NTP servers would you configure in your local ntp.conf?
+* What does the column 'reach' mean in ```ntpq -p``` output?* How can you get Host, Channel, ID, LUN of SCSI disk?
 * What is a tunnel and how you can bypass a http proxy?
 * What is the difference between IDS and IPS?
 * What shortcuts do you use on a regular basis?
@@ -290,6 +298,7 @@ A packet filter is a piece of software which looks at the header of packets as t
 * What's happening when the Linux kernel is starting the OOM killer and how does it choose which process to kill first?
 * How to force/trigger a file system check on next reboot?
 * Describe the linux boot process with as much detail as possible, starting from when the system is powered on and ending when you get a prompt.
+* How can you list the contents of a package?
 * What's a chroot jail?
 * What is a runlevel and how to get the current runlevel?
 * When trying to umount a directory it says it's busy, how to find out which PID holds the directory?
