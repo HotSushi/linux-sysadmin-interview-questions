@@ -184,9 +184,14 @@ $ id -u username
 > $ disown %i # removes process i from job list and will continue working even if terminal closed (ignores SIGHUP) <br>
 > $ nohup ping google.com & # same as above
 * What is a packet filter and how does it work?
+https://www.netfilter.org/documentation/HOWTO/packet-filtering-HOWTO-3.html
+A packet filter is a piece of software which looks at the header of packets as they pass through, and decides the fate of the entire packet. It might decide to DROP/ACCEPT the packet. https://www.netfilter.org/documentation/HOWTO/packet-filtering-HOWTO-6.html. Has 3 in-built chains(Firewalls), INPUT, OUTPUT (for packets destined for this box), FORWARD (for other box). Possible to create our own chain. And link it to existing chains. Possible to modify each chain. Each chain entry is a rule which has action ACCEPT/ DROP.<br>
+> $ iptables -L # List all rules
+> $ iptables -I INPUT -s 10.10.10.10 -j DROP # blocks ip
 * What is Virtual Memory?
 > BLOG
 * What is swap and what is it used for?
+> BLOG (swap is used for swapping memory frames out to hard disk)
 * What is an A record, an NS record, a PTR record, a CNAME record, an MX record?
 * Are there any other RRs and what are they used for?
 * What is a Split-Horizon DNS?
@@ -200,6 +205,8 @@ $ id -u username
 * What is the difference between hardlinks and symlinks? What happens when you remove the source to a symlink/hardlink?
 > https://stackoverflow.com/questions/185899/what-is-the-difference-between-a-symbolic-link-and-a-hard-link
 * What is an inode and what fields are stored in an inode?
+> inode is a filesystem object that can represent a file or directory. Identified by integer called inode-number. max no is fixed. `ls -i` prints inode no.  info stored -> deviceid, link count(hardlinks), ownership(userid, groupid), size, timestamps,no of IO blocks, pointer to blocks. There is a table which maps inode no to respective inodes. 2nd column in ls tells no of links.<br>
+> $ stat a #tells the inode details
 * How to force/trigger a file system check on next reboot?
 * What is SNMP and what is it used for?
 > BLOG
