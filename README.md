@@ -207,33 +207,53 @@ A packet filter is a piece of software which looks at the header of packets as t
 * What is an inode and what fields are stored in an inode?
 > inode is a filesystem object that can represent a file or directory. Identified by integer called inode-number. max no is fixed. `ls -i` prints inode no.  info stored -> deviceid, link count(hardlinks), ownership(userid, groupid), size, timestamps,no of IO blocks, pointer to blocks. There is a table which maps inode no to respective inodes. 2nd column in ls tells no of links.<br>
 > $ stat a #tells the inode details
-* How to force/trigger a file system check on next reboot?
 * What is SNMP and what is it used for?
 > BLOG
-* What is a runlevel and how to get the current runlevel?
 * What is SSH port forwarding?
 > BLOG
 * What is the difference between local and remote port forwarding?
-> BLOG and Stack overflow
+> BLOG and Stack overflow 
 * What are the steps to add a user to a system without using useradd/adduser?
-* What is MAJOR and MINOR numbers of special files?
-* Describe the mknod command and when you'd use it.
+> change relevant files `/etc/passwd` `/etc/group`
 * Describe a scenario when you get a "filesystem is full" error, but 'df' shows there is free space.
+> inodes are full
 * Describe a scenario when deleting a file, but 'df' not showing the space being freed.
+> inode data is not cleared yet, because its being used by some process
 * Describe how 'ps' works.
 * What happens to a child process that dies and has no parent process to wait for it and what’s bad about this?
 * Explain briefly each one of the process states.
 * How to know which process listens on a specific port?
+> $ sudo netstat -nlp | grep :80 # n-> show names of hosts, ports l-> listening, p-> show pid <br>
+> `lsof` can also be used, lsof lists all open file handles, netstat all open network connections
 * What is a zombie process and what could be the cause of it?
+> https://github.com/angrave/SystemProgramming/wiki/Forking,-Part-2:-Fork,-Exec,-Wait <br>
+> **A good parent waits for its children**
+> A child process after finishing execution becomes zombie. Linux does this so that the parent process can know the status of its child. Zombies are light weight, but if too many, no more new processes can be created. How to kill zombie? `wait for it`. When parent waits for child, child (even if zombie) will return status and die, no residues. What if you dont wait? Linux has your back.. the supreme parent process `init` waits for all of its children, so if the parent process dies without waiting for children, all the children will get reassigned to init and then die. MORE: https://github.com/angrave/SystemProgramming/wiki/Forking,-Part-2:-Fork,-Exec,-Wait
 * You run a bash script and you want to see its output on your terminal and save it to a file at the same time. How could you do it?
+> use tee
 * Explain what echo "1" > /proc/sys/net/ipv4/ip_forward does.
+> enables ip_forwarding
+> So, let's say you have two NICs, one (NIC 1) is at address 192.168.2.1/24, and the other (NIC 2) is 192.168.3.1/24. If forwarding is enabled, and a packet comes in on NIC 1 with a "destination address" of 192.168.3.8, the router will resend that packet out of the NIC 2.
 * Describe briefly the steps you need to take in order to create and install a valid certificate for the site https://foo.example.com.
-* Can you have several HTTPS virtual hosts sharing the same IP?
 * What is a wildcard certificate?
+> A single wildcard certificate for \*.example.com, will secure all these domains:[2]
+> payment.example.com
+> contact.example.com
+> login-secure.example.com
 * Which Linux file types do you know?
+>- : regular file
+>d : directory
+>c : character device file
+>b : block device file
+>s : local socket file
+>p : named pipe
+>l : symbolic link 
+> https://linuxconfig.org/identifying-file-types-in-linux
 * What is the difference between a process and a thread? And parent and child processes after a fork system call?
 * What is the difference between exec and fork?
+> fork creates a duplicate child process and start executing where it left off. return value is 0 for child, pid for parent. The exec call is a way to basically replace the entire current process with a new program. There is pattern fork, exec, wait which bash uses (see diagram here https://stackoverflow.com/questions/1653340/differences-between-fork-and-exec). Note Forking creates zombies.
 * What is "nohup" used for?
+> It tells the new process to ignore SIGHUP. It is the signal sent by the kernel when the parent shell is closed.
 * What is the difference between these two commands?
  * ```myvar=hello```
  * ```export myvar=hello```
@@ -259,14 +279,19 @@ A packet filter is a piece of software which looks at the header of packets as t
 * What is an atomic operation?
 * Your freshly configured http server is not running after a restart, what can you do?
 * What kind of keys are in ~/.ssh/authorized_keys and what it is this file used for?
+* Can you have several HTTPS virtual hosts sharing the same IP?
 * I've added my public ssh key into authorized_keys but I'm still getting a password prompt, what can be wrong?
 * Did you ever create RPM's, DEB's or solaris pkg's?
+* Describe the mknod command and when you'd use it.
 * What does ```:(){ :|:& };:``` do on your system?
 * How do you catch a Linux signal on a script?
 * Can you catch a SIGKILL?
+* What is MAJOR and MINOR numbers of special files?
 * What's happening when the Linux kernel is starting the OOM killer and how does it choose which process to kill first?
+* How to force/trigger a file system check on next reboot?
 * Describe the linux boot process with as much detail as possible, starting from when the system is powered on and ending when you get a prompt.
 * What's a chroot jail?
+* What is a runlevel and how to get the current runlevel?
 * When trying to umount a directory it says it's busy, how to find out which PID holds the directory?
 * What's LD_PRELOAD and when it's used?
 * You ran a binary and nothing happened. How would you debug this?
@@ -282,7 +307,8 @@ A packet filter is a piece of software which looks at the header of packets as t
 
 
 #### [[⬆]](#toc) <a name='network'>Networking Questions:</a>
-
+* What is net Masking?
+> https://www.netfilter.org/documentation/HOWTO/networking-concepts-HOWTO-4.html
 * What is localhost and why would ```ping localhost``` fail?
 * What is the similarity between "ping" & "traceroute" ? How is traceroute able to find the hops.
 * What is the command used to show all open ports and/or socket connections on a machine?
