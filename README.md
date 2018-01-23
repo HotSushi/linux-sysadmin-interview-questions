@@ -295,6 +295,8 @@ http://www.bogotobogo.com/DevOps/DevOps-Sys-Admin-Interview-Questions-Networks.p
 * Is 300.168.0.123 a valid IPv4 address?
 > no
 * Which IP ranges/subnets are "private" or "non-routable" (RFC 1918)?
+* What is http proxy? forward and reverse
+> proxy is a computer acting on your behalf. X, Y, Z -> Forward proxy,
 * What is a VLAN?
 * What is ARP and what is it used for?
 * What is the difference between TCP and UDP?
