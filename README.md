@@ -264,6 +264,8 @@ $ id -u username
 > Different return value, pids, program counter, data is copied 
 * What is the difference between exec and fork?
 > fork creates a duplicate child process and start executing where it left off. return value is 0 for child, pid for parent. The exec call is a way to basically replace the entire current process with a new program. There is pattern fork, exec, wait which bash uses (see diagram here https://stackoverflow.com/questions/1653340/differences-between-fork-and-exec). Note Forking creates zombies.
+* How to create a cronjob?
+> crontab -e
 * What is "nohup" used for?
 > It tells the new process to ignore SIGHUP. It is the signal sent by the kernel when the parent shell is closed.
 * What is the difference between these two commands?
