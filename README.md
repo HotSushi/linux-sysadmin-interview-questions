@@ -408,10 +408,17 @@ http://www.bogotobogo.com/DevOps/DevOps-Sys-Admin-Interview-Questions-Networks.p
 #### [[⬆]](#toc) <a name='demo'>Demo Time:</a>
 
 * Unpack test.tar.gz without man pages or google.
+> tar zcvf fred.tar.gz fred # z-> use gzip, c-> compress, v->verbose, f-> filename
+> tar zxvf fred 
 * Remove all "*.pyc" files from testdir recursively?
+> rm -rf # not work, f is to force (dont ask ex. for write protected files) r is to delete directory
+> find . -type f -name '*.sh' -exec rm {} +
 * Search for "my konfu is the best" in all *.py files.
+> find . -type f -name "*.py" -exec grep -i "my konfu is the best" {} +
 * Replace the occurrence of "my konfu is the best" with "I'm a linux jedi master" in all *.txt files.
+> sed -i -e 's/mkitb/ialjm/g' hello.txt
 * Test if port 443 on a machine with IP address X.X.X.X is reachable.
+> telnet host port #connection established -> OK #connection timeout -> Firewall blockng # connection refused -> not listening
 * Get http://myinternal.webserver.local/test.html via telnet.
 * How to send an email without a mail client, just on the command line?
 * Write a ```get_prim``` method in python/perl/bash/pseudo.
