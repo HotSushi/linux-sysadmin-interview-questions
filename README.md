@@ -57,6 +57,8 @@ A collection of linux sysadmin/devops interview questions. Feel free to contribu
 > https://www.thegeekstuff.com/2010/08/raid-levels-tutorial
 * What is a level 0 backup? What is an incremental backup?
 * Describe the general file system hierarchy of a Linux system.
+* What happens when booting
+> 1. BIOS is hardware chip. Checks if all hw components are ok.And then loads certain portion (bootloader) from first sector of hard disk into memory. 2.Bootloader like grub gives user the option to select os 3.bootloader gives control to kernel 4. kernel checks if all hw is ok and starts init  5. init starts all system daemons like to serve network and devices 6. Starts XServer which is graphics daemon 7. user see login
 
 
 #### [[⬆]](#toc) <a name='simple'>Simple Linux Questions:</a>
